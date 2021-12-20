@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<head>
+    <title>les Génériques</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+   <style>
+
+       body{
+          
+
+        box-sizing: border-box;
+
+        background-color:rgb(228, 204, 204);
+       }
+
+       .all{
+        
+        display: grid;
+       grid-gap: 25px;
+ 
+        grid-template-columns: auto;
+        
+        background-color:rgb(228, 204, 204);
+       }
+
+       .all>:not(.result,.pstyle,.pstyle-1){
+        background-color: rgb(21, 46, 46);
+    
+
+       }
+
+      .all>div{
+    
+         
+        overflow: auto;
+        align-items: center;
+
+        padding: 15px;
+      
+
+        border:1px solid rgb(226, 188, 188);
+       
+        border-radius: 15px;
+       }
+
+     
+        .Pr{
+        
+        font-size: 14px;
+         font-style: normal;
+           color: rgb(205, 87, 221);
+            margin-left: 5px;
+           
+       }
+
+       
+
+       .result{
+           overflow: auto;
+           
+           padding: 3px;
+           border-radius: 15px;
+           border: 2px solid black;
+          
+           font-size: 16px;
+           background-color: rgb(228, 130, 130);
+           color: black;
+       }
+    
+    .func{
+        color: lightsalmon;
+    }
+   
+
+    .com{
+    
+        color: slategray;
+        font-size: 10px;
+    }
+
+    .gen{
+        color: springgreen;
+    }
+
+    .pstyle:not(.pstyle-1){
+
+        font-family:'Times New Roman', Times, serif;
+        margin-right: 15px;
+        margin-left: 15px;
+        box-sizing: border-box ;
+        color: rgb(10, 10, 10);
+        word-break: normal;
+        margin-top: 35px;
+        margin-bottom: 0px;
+    }
+    .pstyle-1{
+        font-size: 12px;
+        color: rgb(91, 101, 112);
+        margin-top: 0px;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+
+
+
+   </style>
+</head>
+<body>
+    
+     
+    <p class="pstyle">
+        <h2>1 Break et Continue (pause et coninuer)</h2>
+        Les instructions break et continue en Français(pause ou stop et coninuer ) sont les instructions jump utilisées
+         pour ignorer certaines instructions à l’intérieur de la boucle ou mettre fin à
+        la boucle immédiatement sans vérifier l’expression de test. 
+        Ces instructions peuvent être utilisées à l’intérieur de n’importe quelle boucle,
+         par exemple pour, while, do-while loop.
+
+    </p>
+
+<div class="all">
+<div class="item">
+    <code>
+        <pre class="Pr">
+            
+<strong class="com">
+    // Simpe exemple de break dans une boucle
+</strong>
+
+
+<strong class="gen">
+    fun main()</strong>  {
+
+      for (i in 1..20){
+
+       if (i==10)break
+
+       println(i)
+     }
+    
+   }
+        </pre>
+    </code>
+</div>
+
+<div class="result">
+    <h3 class="headers">Résultat:</h3>
+    <pre style="color: black;font-size: 15px">
+     1 2 3 4 5 6 7 8 9
+    </pre>
+    </div>
+    </div><br>
+    <p class="pstyle-1">
+        Remarque  la boucle doit commencer de 1 à 50 
+        mais avec l' instruction break dans la condition if
+        veut dire si i==20 alors stoppe la boucle  et
+        le reste de la boucle  est ingoré....
+        </p> <br> <br>
+   
+
+
+    <p class="pstyle">
+        <h2> 2 break et continue dans la boucle for loop</h2>
+        Un autre  exemple pour mieux illustrer comment l'instructions break  et continue fonctionnent
+        ici nous allons créer une liste contenant un seul élément qui est le nombre zéro pendant son initialisation
+        et on fera rajouter des nous nous éléments dans cette liste dans   la boucle avec l'instruction break et continue
+    </p>
+
+<div class="all">
+<div class="item">
+    <code>
+        <pre class="Pr">
+<strong class="com">
+    //  exemples de break  et
+     continue dans une boucle
+</strong>
+<strong class="gen">
+     fun main()</strong>  {
+
+  var list = mutableListOf(0)
+
+  for (i in 2 until 20 step 2){
+
+      if (i==2)continue
+      if (i==10)break<strong class="com">
+          //c'est stoppé avant 10 </strong>
+
+      list.add(i)
+
+      println(list)
+     }
+
+  }
+        </pre>
+    </code>
+</div>
+
+<div class="result">
+    <h3 class="headers">Résultat:</h3>
+    <pre style="color: black;font-size: 15px">
+        [0, 4]
+        [0, 4, 6]
+        [0, 4, 6, 8]
+    </pre>
+    </div>
+    </div><br>
+    <p class="pstyle-1">
+        Remarque: la boucle doit débutter de (until veut dire jusqu à )
+        2 jusqu'à 20 avec un saut de 2 
+       ça veut dire de 2 à  4 à 6 à 8 jusqu' on arrive au nombre 20
+       l'instruction continue veut dire ici tant que i ==2 alors continue la boucle 
+       et l instruction break veut dire si i == 10 alors il faut tout stopper mais  et 
+       à la fin vous avions rajouter i dans notre liste comme élément ce qui avait
+       donné le Résultat d'en haut.
+       </p><br><br>
+
+
+     
+     <p class="pstyle">
+    <h2>3 Break et continue dans  la boucle while(loop) </h2>
+    On peut également utiliser Break et continue dans la boucle while loop et do while loop
+    comme c'etait le cas 
+    avec for loop et toutes ces difféerentes boucles vont donner les résultas identiques
+          </p>
+    
+    <div class="all">
+    <div class="item">
+        <code>
+            <pre class="Pr">
+    <strong class="gen">
+    fun main()</strong>  {
+    
+           <strong class="com">
+// initialiser avec 0 comme
+// seul élément ds la liste pour le moment</strong>
+   var list = mutableListOf(0)
+        
+    var  i=0
+    while (i<20){
+     i+=2
+     if (i==2)continue
+     if (i==10)break
+
+      list.add(i)<strong class="com">
+//rajout de i comme élément ds la liste</strong> 
+            
+        println(list)
+     }
+
+  }
+  
+            </pre>
+        </code>
+    </div>
+    
+    <div class="result">
+    <h3 class="headers">Résultat:</h3>
+    <pre style="color: black;font-size: 15px">
+      [0, 4]            
+      [0, 4, 6]      
+      [0, 4, 6, 8]     
+    </pre>
+     </div>
+     </div><br>
+
+
+        <p class="pstyle">
+            <h2>Break et Continue dans  la boucle dans do while</h2>
+            On peut également utiliser Break et coontinue dans la boucle  do while loop
+            comme c'etait le cas avec while loop
+        et for loop et toutes ces difféerentes boucles vont donner les résultas identiques
+                  </p>
+            
+            <div class="all">
+            <div class="item">
+                <code>
+                    <pre class="Pr">
+            
+            <strong class="gen">
+    fun main()</strong>  {
+            
+                   <strong class="com">
+// initialiser avec 0 comme
+// seul élément ds la liste pour le moment</strong>
+  var list = mutableListOf(0)
+                
+  var i=0
+  do {
+      i += 2
+   
+     if (i==2)continue
+     if (i==10)break
+
+       list.add(i)
+       println(list)
+
+     } while (i < 20)
+           
+        
+  }
+          
+      </pre>
+   </code>
+   </div>
+            
+  <div class="result">
+   <h3 class="headers">Résultat:</h3>
+   <pre style="color: black;font-size: 15px">    
+     [0, 4]             
+     [0, 4, 6]       
+     [0, 4, 6, 8]     
+</pre>
+</div>
+</div>
+        
+<p class="pstyle">
+ <h3>Concluion: </h3>
+Dans la vraie vie  c'est à dire en pratique dans les vrais projets de programmation 
+vous ne utiliserez presque jamais ou rarement  ces instructions break et coninuer ou moins vous ne les rencontrez  peu dans 
+la vraie pratique  ces instructions sont presqu'un heritage du monde de la programmation
+
+</p>        
+
+
+   
+
+</body>
+</html>
